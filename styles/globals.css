@@ -33,7 +33,7 @@ body {
   border-bottom-right-radius: 4px;
 }
 
-.amarelo h4 {
+.yellow_box h4 {
   padding: 15px;
   margin-bottom: 0;
   text-align: center;
@@ -46,7 +46,7 @@ body {
   background-color: #ffcd00;
 }
 
-.amarelo p {
+.yellow_box p {
   padding: 15px;
 }
 
@@ -65,9 +65,10 @@ body {
   height: 436px;
   border-radius: 4px;
   margin: 10px;
+  /* border: 5px solid #47d7ac; */
 }
 
-img {
+.card img {
   border-radius: 4px 4px 0px 0px;
 }
 
@@ -120,3 +121,46 @@ img {
 	display: inline-flex;
 }
 
+.btn_continue {
+  padding: 15px;
+  /* margin-bottom: 0; */
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  border-radius: 4px;
+  letter-spacing: 1.5px;
+  color: #2d2926;
+  background-color: #ffcd00;
+  width: 200px;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+.display_opposite {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn_center {
+  display: flex;
+  justify-content: center;
+}
+
+/* .btn_continue div:link { text-decoration: none; }
+
+
+.btn_continue div:visited { text-decoration: none; }
+
+
+.btn_continue div:hover { text-decoration: none; }
+
+
+.btn_continue div:active { text-decoration: none; } */
+
+.user_details_container {
+  /* display: flex;
+  justify-content: center; */
+  width: 895px;
+
+}

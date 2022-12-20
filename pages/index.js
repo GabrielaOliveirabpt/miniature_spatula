@@ -9,7 +9,7 @@ function Home({ recipes }) {
         <Header/>
 
         <div className='container_instructions'>
-          <div className='amarelo'>
+          <div className='yellow_box'>
             <h4>It' your choice</h4>
             <p>Choose 2 from our 30 delicious dishes. Whether meat & fish, vegetarian, fit & healthy, fast food or family-friendly - we have something for everyone! Then presse the continue button at the end of the page.</p>
           </div>
@@ -28,10 +28,12 @@ function Home({ recipes }) {
        <br/>
        <br/>
        <br/>
-
-        <Link href='/user-details'>
-        User Details
+        <Link href='/user-details' className='btn_center'>
+            <div className="btn_continue">Continue</div>
         </Link>
+        <br/>
+       <br/>
+       <br/>    
       </div>
     );
   }
