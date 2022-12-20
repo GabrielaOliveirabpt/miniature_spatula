@@ -3,7 +3,7 @@ import Card from '/components/Card.js';
 import Header from '/components/Header.js';
 
 
-function Home() {
+function Home({ recipes }) {
     return (
       <div>
         <Header/>
@@ -14,17 +14,15 @@ function Home() {
             <p>Choose 2 from our 30 delicious dishes. Whether meat & fish, vegetarian, fit & healthy, fast food or family-friendly - we have something for everyone! Then presse the continue button at the end of the page.</p>
           </div>
         </div>
-
+        
         <div className='container_card'>
-
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          
+        {!!recipes.length &&
+          recipes.map((recipe) => (
+            <Card
+              key={recipe.id}
+              recipe={recipe}
+            />
+          ))}
         </div>
        
        <br/>
@@ -39,3 +37,15 @@ function Home() {
   }
   
   export default Home;
+
+
+  export const getStaticProps = async () => {
+    const response = await fetch('https://code-challenge-mid.vercel.app/api/recipes');
+    const { recipes = [] } = await response.json();
+  
+    return {
+      props: {
+        recipes,
+      },
+    };
+  };
