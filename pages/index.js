@@ -28,7 +28,7 @@ function Home({ recipes }) {
        <br/>
        <br/>
        <br/>
-        <Link href='/user-details' className='btn_center'>
+        <Link href='/user-details' className='btn_center' style={{ textDecoration: 'none' }}>
             <div className="btn_continue">Continue</div>
         </Link>
         <br/>
