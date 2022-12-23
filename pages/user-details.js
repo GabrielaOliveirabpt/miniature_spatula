@@ -1,15 +1,25 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { useAppContext } from '../context/state';
 
 
-function UserDetails() {
-const [ name, setName ] = useState('')
-const [ email, setEmail ] = useState('')
+
+const UserDetails = () => {
+    const { selectedRecipes } = useAppContext();
+    const [ name, setName ] = React.useState('')
+    const [ email, setEmail ] = React.useState('')
+// const [ recipes , setRecipes ] = useState([])
+
+// console.log('hello')
 
 // const submitData = async () => {
 //     const response = await fetch('https://code-challenge-mid.vercel.app/api/submit', {
 //         method: 'POST',
-//         body: JSON.stringify({ name, email }),
+//         body: JSON.stringify({ 
+//             name: name, 
+//             email: email, 
+//             recipes: [] 
+//         }),
 //         headers: {
 //             'Content-Type': 'application/json'
 //         },
@@ -26,9 +36,19 @@ const [ email, setEmail ] = useState('')
         <div className='container_instructions'>
             <div className='yellow_box'>
             <h4>Registration</h4>            
-            <p>You have select the following Recipes:</p>
-            <p>- Easy Indian Chicken Curry with Minted Masala Rice</p>
-            <p>- Smoky Barbecue Pork Meatballs with Veggie-Loaded Mash</p>
+            <p>You have selected the following recipes:</p>
+            {selectedRecipes.map((recipe) => (
+                <p>- {recipe.recipe} {recipe.recipeSubtitle}</p>
+            ))}
+               {/* key={recipe.id}
+               recipe={recipe}
+               setSelectedRecipes={setSelectedRecipes}
+               selectedRecipes={selectedRecipes} */}
+            
+            
+            
+            {/* <p>- Easy Indian Chicken Curry with Minted Masala Rice</p>
+            <p>- Smoky Barbecue Pork Meatballs with Veggie-Loaded Mash</p> */}
 
             <p>Please insert your name and email address to complete the registration process:</p>
             
@@ -53,7 +73,7 @@ const [ email, setEmail ] = useState('')
                     <Link href='/' className='btn_centre' style={{ textDecoration: 'none' }}>
                         <div 
                             className="btn_continue"
-                            //   onClick={submitData}
+                            //   onClick={submitData} sem perder o state
                         >
                             Go Back 
                         </div>

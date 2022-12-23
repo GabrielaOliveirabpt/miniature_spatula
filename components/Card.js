@@ -1,28 +1,37 @@
+import React, { useState } from 'react';
 import { mealAttKeys } from '../helpers/functions';
 
-function Card({ recipe }) {
+const Card = ({ recipe, setSelectedRecipes, selectedRecipes, card_selected, setCard_selected }) => {
+    
+
     return (
       <div
-        className="card"
+        className={card_selected ? 'card_selected card' : 'card'}
+        onClick={() => setSelectedRecipes ( 
+              [ 
+                ...selectedRecipes, 
+                { id: recipe.id, recipe: recipe.title, recipeSubtitle: recipe.subtitle} 
+              ]
+            )}
       >
         <img 
             src={recipe.image.url ?? ''}
             alt={recipe.title}
-            width="436"
+            width='436'
         />
         <div className="recipe_details">
-            <p className="recipe_type">
+            <p className='recipe_type'>
                 
                 {recipe.mealType}
             </p>
-            <p className="recipe_title" >
+            <p className='recipe_title' >
                 {recipe.title}
             </p>
-            <p className="recipe_subtitle">
+            <p className='recipe_subtitle'>
                 {recipe.subtitle}
             </p>
 
-            <div className="recipe_labels">
+            <div className='recipe_labels'>
                 {recipe.attributes.map((attribute) => (
                     <span
                         key={attribute.key}

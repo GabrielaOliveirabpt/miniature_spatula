@@ -1,17 +1,21 @@
+import React, { useState } from 'react';
+import { useAppContext } from '../context/state';
 import Link from 'next/link';
 import Card from '/components/Card.js';
 import Header from '/components/Header.js';
 
 
-function Home({ recipes }) {
+const Home = ({ recipes }) => {
+  const { selectedRecipes, setSelectedRecipes } = useAppContext([]);
+  const [ card_selected, setCard_selected] = useState(false)
     return (
       <div>
         <Header/>
 
         <div className='container_instructions'>
           <div className='yellow_box'>
-            <h4>It' your choice</h4>
-            <p>Choose 2 from our 30 delicious dishes. Whether meat & fish, vegetarian, fit & healthy, fast food or family-friendly - we have something for everyone! Then presse the continue button at the end of the page.</p>
+            <h4>It's your choice</h4>
+            <p>Choose two out of our 30 delicious dishes. Whether meat & fish, vegetarian, fit & healthy, fast food or family-friendly - we have something for everyone! Then press the continue button at the end of the page.</p>
           </div>
         </div>
         
@@ -21,6 +25,10 @@ function Home({ recipes }) {
             <Card
               key={recipe.id}
               recipe={recipe}
+              setSelectedRecipes={setSelectedRecipes}
+              selectedRecipes={selectedRecipes}
+              card_selected={card_selected} 
+              setCard_selected={setCard_selected}
             />
           ))}
         </div>
@@ -28,8 +36,16 @@ function Home({ recipes }) {
        <br/>
        <br/>
        <br/>
-        <Link href='/user-details' className='btn_center' style={{ textDecoration: 'none' }}>
-            <div className="btn_continue">Continue</div>
+        <Link href='/user-details' className='btn_center' style={{ textDecoration: 'none' }} >
+            <div 
+              className="btn_continue"
+              // onClick={() => {
+              //   const { email, password } = this.state;
+              //   loginUser({ email, password });
+              // }}
+            >
+              Continue
+            </div>
         </Link>
         <br/>
        <br/>
