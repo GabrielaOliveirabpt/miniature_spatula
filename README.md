@@ -25,5 +25,14 @@ To use the app, click on two recipe cards, then click in the button continue at 
 
 ## Improvements:
 
+If I would have more time to learn and implement what I'd learnt I would have:
+
+- added a background color on the selected recipes
+- allowed user to unselect recipes
+- made the continue button unvailable if 2 recipes are not selected 
+- added a checker for name and email being valid
+- sended the data with post request
+- add media queries for responsiveness under 900px
+- created and run tests
 
 
