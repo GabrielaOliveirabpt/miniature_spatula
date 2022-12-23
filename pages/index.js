@@ -14,13 +14,13 @@ const Home = ({ recipes }) => {
 
         <div className='container_instructions'>
           <div className='yellow_box'>
-            <h4>It's your choice</h4>
+            <h4>Miniature Spatula</h4>
             <p>Choose two out of our 30 delicious dishes. Whether meat & fish, vegetarian, fit & healthy, fast food or family-friendly - we have something for everyone! Then press the continue button at the end of the page.</p>
           </div>
         </div>
         
         <div className='container_card'>
-        {!!recipes.length &&
+        {recipes.length > 0 &&
           recipes.map((recipe) => (
             <Card
               key={recipe.id}
@@ -37,13 +37,7 @@ const Home = ({ recipes }) => {
        <br/>
        <br/>
         <Link href='/user-details' className='btn_center' style={{ textDecoration: 'none' }} >
-            <div 
-              className="btn_continue"
-              // onClick={() => {
-              //   const { email, password } = this.state;
-              //   loginUser({ email, password });
-              // }}
-            >
+            <div className='btn_continue'>
               Continue
             </div>
         </Link>

@@ -1,27 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { mealAttKeys } from '../helpers/functions';
 
 const Card = ({ recipe, setSelectedRecipes, selectedRecipes, card_selected, setCard_selected }) => {
-    
 
+  const setSelectedRecipe = (selRec, id, title, subtitle) => {
+     if (selRec.length < 2) {
+      setSelectedRecipes([ 
+        ...selRec, 
+        { id: id, recipe: title, recipeSubtitle: subtitle} 
+      ])
+    } else {
+      console.log ('only two recipes allowed')
+    }
+    
+  }
     return (
       <div
-        className={card_selected ? 'card_selected card' : 'card'}
-        onClick={() => setSelectedRecipes ( 
-              [ 
-                ...selectedRecipes, 
-                { id: recipe.id, recipe: recipe.title, recipeSubtitle: recipe.subtitle} 
-              ]
-            )}
+      className='card'
+      onClick={() => setSelectedRecipe(selectedRecipes, recipe.id, recipe.title, recipe.subtitle)}
+        // className={card_selected ? 'card_selected card' : 'card'}
+        // onClick={() => setSelectRecipeAndCard (selectedRecipes, recipe.id, recipe.title, recipe.subtitle, true)}
       >
         <img 
             src={recipe.image.url ?? ''}
             alt={recipe.title}
             width='436'
         />
-        <div className="recipe_details">
+        <div className='recipe_details'>
             <p className='recipe_type'>
-                
                 {recipe.mealType}
             </p>
             <p className='recipe_title' >
@@ -41,8 +47,7 @@ const Card = ({ recipe, setSelectedRecipes, selectedRecipes, card_selected, setC
                     </span>
                 ))}
             </div>
-
-
+            
         </div>
         
       </div>

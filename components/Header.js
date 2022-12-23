@@ -1,12 +1,12 @@
 function Header() {
     return (
-        <div className="header">
+        <div className='header'>
              
-            <span className="logo">
+            <span className='logo'>
                 <img 
-                src="/Marley_Spoon_logo.png"
-                alt="Marley Spoon logo" 
-                width="180" 
+                src='/Marley_Spoon_logo.png'
+                alt='Marley Spoon logo' 
+                width='180' 
                 /> 
             </span>
                 
