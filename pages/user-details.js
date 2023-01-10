@@ -65,7 +65,7 @@ const UserDetails = () => {
                     <Link href='/confirmation' className='btn_centre' style={{ textDecoration: 'none' }}>
                         <div 
                             className='btn_continue'
-                            onClick={() => submitData}
+                            onClick={() => submitData()}
                         >
                             Send
                         </div>
