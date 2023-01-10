@@ -36,7 +36,7 @@ const UserDetails = () => {
                
             <p>Please insert your name and email address to complete the registration process:</p>
             
-            <div className='container_input'>
+            <form className='container_input'>
                 <input
                     type='text'
                     value={firstName}
@@ -72,7 +72,7 @@ const UserDetails = () => {
                     </Link>
                     
                 </div>
-            </div>
+            </form>
             <br/>
             <br/>   
 
