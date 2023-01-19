@@ -60,5 +60,6 @@ const Home = ({ recipes }) => {
       props: {
         recipes,
       },
+      revalidate: 10,
     };
   };
