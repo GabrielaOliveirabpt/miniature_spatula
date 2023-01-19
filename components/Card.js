@@ -16,10 +16,8 @@ const Card = ({ recipe, setSelectedRecipes, selectedRecipes, card_selected, setC
   }
     return (
       <div
-      className='card'
-      onClick={() => setSelectedRecipe(selectedRecipes, recipe.id, recipe.title, recipe.subtitle)}
-        // className={card_selected ? 'card_selected card' : 'card'}
-        // onClick={() => setSelectRecipeAndCard (selectedRecipes, recipe.id, recipe.title, recipe.subtitle, true)}
+        onClick={() => setSelectedRecipe(selectedRecipes, recipe.id, recipe.title, recipe.subtitle)}
+        className={card_selected ? 'card_selected card' : 'card'}
       >
         <img 
             src={recipe.image.url ?? ''}

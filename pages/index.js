@@ -8,6 +8,7 @@ import Header from '/components/Header.js';
 const Home = ({ recipes }) => {
   const { selectedRecipes, setSelectedRecipes } = useAppContext([]);
   const [ card_selected, setCard_selected] = useState(false)
+
     return (
       <div>
         <Header/>
@@ -27,7 +28,7 @@ const Home = ({ recipes }) => {
               recipe={recipe}
               setSelectedRecipes={setSelectedRecipes}
               selectedRecipes={selectedRecipes}
-              card_selected={card_selected} 
+              card_selected={!!selectedRecipes.find((selectedRecipe) => selectedRecipe.id === recipe.id)}
               setCard_selected={setCard_selected}
             />
           ))}
