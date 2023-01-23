@@ -3,8 +3,6 @@ import React from 'react'
 import { useAppContext } from '../context/state';
 import Head from 'next/head';
 
-
-
 const UserDetails = () => {
     const { selectedRecipes } = useAppContext();
     const [ firstName, setFirstName ] = React.useState('')
