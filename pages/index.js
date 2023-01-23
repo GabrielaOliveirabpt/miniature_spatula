@@ -3,6 +3,7 @@ import { useAppContext } from '../context/state';
 import Link from 'next/link';
 import Card from '/components/Card.js';
 import Header from '/components/Header.js';
+import Head from 'next/head';
 
 
 const Home = ({ recipes }) => {
@@ -12,7 +13,9 @@ const Home = ({ recipes }) => {
     return (
       <div>
         <Header/>
-
+        <Head>
+          <title>Miniature Spatula - Home </title>
+        </Head>
         <div className='container_instructions'>
           <div className='yellow_box'>
             <h4>Miniature Spatula</h4>

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import { useAppContext } from '../context/state';
+import Head from 'next/head';
+
 
 
 const UserDetails = () => {
@@ -27,6 +29,9 @@ const UserDetails = () => {
 
     return (
         <div className='container_instructions'>
+            <Head>
+                <title>Miniature Spatula - Registration </title>
+            </Head>
             <div className='yellow_box'>
             <h4>Registration</h4>            
             <p>You have selected the following recipes:</p>
